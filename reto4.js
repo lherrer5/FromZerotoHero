@@ -52,9 +52,10 @@ if (EdadingresoCine >12 && EdadingresoCine<=17) {
 /*Una juguetería te contrata para que programes un Loro que juega a Tingo
 Tango. Desearía que la pruebes imprimiendo 32 veces en pantalla: Tingo!*/
 
-for (let i = 0; i < 34; i++) {
-    console.log("Tingo!");
-    if(i>=33){
+for (let i = 1; i <= 33; i++) {
+    if(i<=32){
+        console.log("Tingo!"); 
+    }if(i===33){
         console.log("Tango!"); 
     }
 }
@@ -83,7 +84,7 @@ diferentes ciclos para cumplir todas las tareas que debe tener el TVTUBY
 ● Imprimir los números entre el 5 y el 20, saltando de tres en tres.*/
 
 let num_De_tres=0
-for (let i = 5; i < 20; i=i+3) {
+for (let i = 5; i <= 20; i=i+3) {
     num_De_tres=i
     console.log(num_De_tres)
 }
@@ -91,7 +92,7 @@ for (let i = 5; i < 20; i=i+3) {
 /*Mostrar la sumatoria de todos los números entre el 0 y el 100*/
 
 let sumatoria_num=0
-for (let i = 0; i < 101; i++) {
+for (let i = 0; i < 101; i++) {//cuando i=1 sumatoria_num=sumat anterior +i(1)=1;i=2 sumatoria_num=sumat anterior(1) +i(2)=3....
     sumatoria_num+=i
 }
 console.log(sumatoria_num)
@@ -100,7 +101,7 @@ console.log(sumatoria_num)
 obtiene multiplicando todos los números enteros positivos que hay entre el 1 y ese número.*/
 
 let acum=1
-for (let i = 1; i <= 6; i++) {
+for (let i = 1; i <= 6; i++) {//cuando i=2 acum= acum anterior(1)*i(2)=2; i=3 acum= acum anterior(2)*i(3)=6; i=4 acum= acum anterior(6)*i(4)=24...
     acum=i*acum;
 console.log("el factorial de "+i+" es "+acum)}
 
@@ -115,7 +116,7 @@ function factorial_function(n) {
     else if (n<2) {
         return 1;
     }else{
-        return n*factorial_function(n-1);
+        return n*factorial_function(n-1);//cuando n=2 result=n(2)*factoDE1(1)=2;n=3 result=n(3)*factoDE2(2)=6; n=4 result=n(4)*factoDE3(6)=24
     }
 }
 console.log(result)
@@ -127,11 +128,11 @@ let anterior=0
 let acumulado=1
 let actual=1
 
-for (let i = 2; i <= num; i++) { 
-    anterior=acumulado;
-    acumulado=actual;
-    actual=anterior+acumulado;
-    console.log("Fibonacci de "+i+" es "+acumulado)
+for (let i = 2; i <= num; i++) { //cuando i=3 anterior3=acum2(1) acumulado3=actual2(1) actual3=anteriro3(1)+acumulado3(1)=2; 
+    anterior=acumulado;          //cuando i=4 anterior4=acum3(1) acumulado4=actual3(2) actual4=anteriro4(1)+acumulado4(2)=3
+    acumulado=actual;            //cuando i=5 anterior5=acum4(2) acumulado5=actual4(3) actual5=anteriro5(2)+acumulado5(3)=5
+    actual=anterior+acumulado;   //cuando i=6 anterior6=acum5(3) acumulado6=actual5(5) actual6=anteriro6(3)+acumulado6(5)=8
+    console.log("Fibonacci de "+i+" es "+acumulado)//cuando i=7 anterior7=acum6(5) acumulado7=actual6(8) actual6=anteriro6(5)+acumulado6(8)=13
 }
 
 

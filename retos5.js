@@ -10,9 +10,8 @@ let estudiantes= ["Ana", "Manuela", "Raúl", "Carolina", "María", "Antonio", "C
 for (let index = 0; index < estudiantes.length; index++) {
     if (estudiantes[index][0]==="A") {
         console.log(estudiantes[index])
-        }  
-    }
-
+    }  
+}
 
 const el3= estudiantes.filter(estudiante => estudiante.length>6);
 console.log(el3)
@@ -59,7 +58,7 @@ for( let mascoticas of mascota){
     console.log(mascoticas.nombre+" es la mascota de "+mascoticas.nombrePropieta)
 }
 
-//segunda opcion con array
+//segunda opcion 
 const mascota1 ={
     nombre: "mirri",
     tipoAnimal: "gato", 
@@ -102,33 +101,34 @@ un método que nos diga si todos los tipos de datos son iguales o no.*/
 
 //let numeros=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
 
-let x=[];
+let numeros=[];
 
 for (let i =1; i<31; i++){
-        x.push(i)
-    }
-console.log(x)
+    numeros.push(i)
+}
+console.log(numeros)
 
 //multiplos de 3
-const multipl=x.filter(numero=>numero%3===0);
+const multipl=numeros.filter(numero=>numero%3===0);
 console.log(multipl)
 
 //multiplos de 5
-const multipl5=x.filter(numero=>numero%5===0);
+const multipl5=numeros.filter(numero=>numero%5===0);
 console.log(multipl5)
 
 //cada número multiplicado por 2
-const doble=x.map(function(x){
-    return x*2
+const doble=numeros.map(function(numeros){
+    return numeros*2
 })
+console.log(doble)
 
 //cada número multiplicado por 2 funcion flecha
-const doble2=x.map((x)=> x*2)
+const doble2=numeros.map((numeros)=> numeros*2)
 console.log(doble2)
 
 
 //multiplos de 5 y 3
-const multipl5y3=x.filter(numero=>numero%5===0 && numero%3===0);
+const multipl5y3=numeros.filter(numero=>numero%5===0 && numero%3===0);
 console.log(multipl5y3)
 
 
@@ -142,7 +142,7 @@ if(typeof(variado[0]) === typeof(variado[1])=== typeof(variado[2])=== typeof(var
 }
 
 //con metodo
-const datosDif=(element) => element=== typeof(variado[0]);
+const datosDif=(element) => element=== typeof(variado[0]);//basta con q un elemento no sea igual al primero para q digamos q NO todos los elem son iguales
 console.log(variado.every(datosDif));
 
 
