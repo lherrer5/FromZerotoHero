@@ -16,7 +16,8 @@ class Punto {
 
     //Crea un método llamado ver pa q al imprimir x pantalla un punto aparezca en formato(X,Y)
     ver (){//debe estar fuera de constructor
-        console.log(`(${this.corX},${this.corY})`)//this es un valor del object, y como no he definido a x ni y, para llamarlas dentro debo utilizar this 
+        return`(${this.corX},${this.corY})`//this es un valor del object, y como no he definido a x ni y, para llamarlas dentro debo utilizar this. Lo hacemos con interpolación utilizando template strings ` y marcadores de posición ${}
+        //concatenación normal "("+this.x+","+this.y+")"
     }
     //Añade un método llamado vector, que toma otro punto y calcula el vector resultante entre los dos puntos 
     //(en el nuevo punto X es la suma de las coordenadas en X 
@@ -34,7 +35,7 @@ class Punto {
     }
     //Añade un método llamado distancia, que tome otro punto y calcule la distancia entre los dos puntos y la muestre por pantalla. 
     //La fórmula es la siguiente:
-    static distancia(puntoDis1, puntoDis2){//con estatico funciona para dos puntos creados fuera de la clase
+    static distancia(puntoDis1, puntoDis2){
         let puntoDisX=  puntoDis1.corX- puntoDis2.corX;
         let puntoDisY= puntoDis1.corY- puntoDis2.corY;
         return Math.sqrt(puntoDisX*puntoDisX+puntoDisY*puntoDisY)
@@ -51,22 +52,22 @@ console.log(prueba)// sale Punto { corX:1. corY:5}
 const puntoCero= new Punto()
 console.log(puntoCero.corX, puntoCero.corY)
 //pa imprimir ver
-puntoCero.ver()//ojo ver es una funcion y por eso se llama con () imprime (0,0)
+console.log(puntoCero.ver())//ojo ver es una funcion y por eso se llama con () imprime (0,0)
 
 const xCero= new Punto(0,4)
 console.log(xCero.corX, xCero.corY)
 //pa imprimir ver
-xCero.ver()//imprime (0,4)
+console.log(xCero.ver())//imprime (0,4)
 
 const AmbasCord= new Punto(3,9)
 console.log(AmbasCord.corX, AmbasCord.corY)
 //pa imprimir ver
-AmbasCord.ver()
+console.log(AmbasCord.ver())
 
 const nuevoVector= AmbasCord.vector(xCero)//No puedo pasarse numeros como parametros?? xCero es parametro puntoNuevo y this.Cor son los de AmbasCord q es al q le estoy aplicando el metodo
-nuevoVector.ver()
+console.log(nuevoVector.ver())
 //otra forma más rapida. el .vector m crea el nuevo punto y el ver m lo muestra
-AmbasCord.vector(xCero).ver()//imprime (3,13) x=0+3 y=4+9
+console.log(AmbasCord.vector(xCero).ver())//imprime (3,13) x=0+3 y=4+9
 
 const newDistance= AmbasCord.Distance(xCero)
 console.log(newDistance)
